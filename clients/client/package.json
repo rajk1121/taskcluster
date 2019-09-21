@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "taskcluster-client",
   "version": "16.2.0",
@@ -30,3 +31,37 @@
   ],
   "main": "./src/index.js"
 }
+=======
+{
+  "name": "taskcluster-client",
+  "version": "17.0.0",
+  "author": "Jonas Finnemann Jensen <jopsen@gmail.com>",
+  "description": "Client for interfacing taskcluster components",
+  "license": "MPL-2.0",
+  "repository": "https://github.com/taskcluster/taskcluster/tree/master/clients/client",
+  "scripts": {
+    "test": "mocha test/*_test.js",
+    "package-test": "sh package_test.sh"
+  },
+  "dependencies": {
+    "debug": "^4.0.0",
+    "hawk": "^7.0.10",
+    "lodash": "^4.17.4",
+    "slugid": "^2.0.0",
+    "superagent": "^5.0.0",
+    "taskcluster-lib-urls": "^12.0.0"
+  },
+  "devDependencies": {
+    "http-proxy": "^1.17.0",
+    "mocha": "^6.0.0",
+    "nock": "^11.0.0"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "files": [
+    "src"
+  ],
+  "main": "./src/index.js"
+}
+>>>>>>> a7eed0c608b0fc64cc7a94951be03d34a1c64088

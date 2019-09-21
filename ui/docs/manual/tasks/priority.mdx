@@ -1,0 +1,28 @@
+<<<<<<< HEAD:ui/docs/manual/tasks/priority.md
+---
+filename: tasks/priority.md
+title: Priority
+order: 25
+---
+
+Each task has a `priority` field giving its relative priority, chosen from a
+small set of named priorities. When several tasks are pending in the same
+queue, those with the highest priority will be executed first.
+
+Note that this can result in starvation: if there are enough tasks at a given
+priority to keep all available workers busy, then no tasks of lower priority
+=======
+---
+filename: tasks/priority.mdx
+title: Priority
+order: 25
+---
+
+Each task has a `priority` field giving its relative priority, chosen from a
+small set of named priorities. When several tasks are pending in the same
+queue, those with the highest priority will be executed first.
+
+Note that this can result in starvation: if there are enough tasks at a given
+priority to keep all available workers busy, then no tasks of lower priority
+>>>>>>> a7eed0c608b0fc64cc7a94951be03d34a1c64088:ui/docs/manual/tasks/priority.mdx
+will run.

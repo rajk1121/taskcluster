@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: taskcluster
 appVersion: '16.2.0'
 description:  Framework that supports Mozilla's continuous integration and release processes.
@@ -8,3 +9,15 @@ keywords:
 sources:
   - https://github.com/taskcluster/taskcluster
 icon: https://media.taskcluster.net/logo/logo.png
+=======
+name: taskcluster
+appVersion: '17.0.0'
+description:  Framework that supports Mozilla's continuous integration and release processes.
+version: 0.1.0
+keywords:
+  - ci
+  - ci-framework
+sources:
+  - https://github.com/taskcluster/taskcluster
+icon: https://media.taskcluster.net/logo/logo.png
+>>>>>>> a7eed0c608b0fc64cc7a94951be03d34a1c64088
