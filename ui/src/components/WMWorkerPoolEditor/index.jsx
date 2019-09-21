@@ -4,6 +4,7 @@ import { oneOfType, object, string, func, bool } from 'prop-types';
 import { equals } from 'ramda';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import ListItem from '@material-ui/core/ListItem';
+import MarkdownTextArea from '@mozilla-frontend-infra/components/MarkdownTextArea';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography/Typography';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -328,13 +329,12 @@ export default class WMWorkerPoolEditor extends Component {
 
         <List className={classes.list}>
           <ListItem>
-            <TextField
+            <MarkdownTextArea
               label="Description"
               name="description"
               onChange={this.handleInputChange}
-              fullWidth
               value={workerPool.description}
-              margin="normal"
+              defaultTabIndex={1}
             />
           </ListItem>
 

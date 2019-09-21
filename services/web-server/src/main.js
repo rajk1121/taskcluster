@@ -1,4 +1,4 @@
-const debug = require('debug')('app:main');
+// const debug = require('debug')('app:main');
 const assert = require('assert');
 const depthLimit = require('graphql-depth-limit');
 const { createComplexityLimitRule } = require('graphql-validation-complexity');
@@ -97,7 +97,7 @@ const load = loader(
 
     generateReferences: {
       requires: ['cfg'],
-      setup: ({cfg}) => libReferences.fromService({
+      setup: ({ cfg }) => libReferences.fromService({
         references: [monitorManager.reference()],
       }).generateReferences(),
     },
@@ -169,7 +169,7 @@ const load = loader(
 
     AuthorizationCode: {
       requires: ['cfg', 'monitor'],
-      setup: ({cfg, monitor}) => AuthorizationCode.setup({
+      setup: ({ cfg, monitor }) => AuthorizationCode.setup({
         tableName: 'AuthorizationCodesTable',
         monitor: monitor.childMonitor('table.authorizationCodes'),
         credentials: sasCredentials({
@@ -184,7 +184,7 @@ const load = loader(
 
     AccessToken: {
       requires: ['cfg', 'monitor'],
-      setup: ({cfg, monitor}) => AccessToken.setup({
+      setup: ({ cfg, monitor }) => AccessToken.setup({
         tableName: 'AccessTokenTable',
         monitor: monitor.childMonitor('table.accessTokenTable'),
         credentials: sasCredentials({
@@ -200,7 +200,7 @@ const load = loader(
 
     'cleanup-expire-auth-codes': {
       requires: ['cfg', 'AuthorizationCode', 'monitor'],
-      setup: ({cfg, AuthorizationCode, monitor}) => {
+      setup: ({ cfg, AuthorizationCode, monitor }) => {
         return monitor.oneShot('cleanup-expire-authorization-codes', async () => {
           const delay = cfg.app.authorizationCodeExpirationDelay;
           const now = taskcluster.fromNow(delay);
@@ -214,7 +214,7 @@ const load = loader(
 
     'cleanup-expire-access-tokens': {
       requires: ['cfg', 'AccessToken', 'monitor'],
-      setup: ({cfg, AccessToken, monitor}) => {
+      setup: ({ cfg, AccessToken, monitor }) => {
         return monitor.oneShot('cleanup-expire-access-tokens', async () => {
           const delay = cfg.app.authorizationCodeExpirationDelay;
           const now = taskcluster.fromNow(delay);
